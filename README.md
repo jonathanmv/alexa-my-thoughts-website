@@ -2,6 +2,8 @@
 
 > Track your mood over time
 
+See it in action at https://jonathanmv.github.io/alexa-my-thoughts-website/#/
+
 ## Build Setup
 
 ``` bash
