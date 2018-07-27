@@ -19,9 +19,9 @@ const getters = {
   isAuthorized: ({ authorized }) => authorized !== null,
   accessToken: ({ authorized }) => get(authorized, 'accessToken'),
   user: ({ user }) => user,
-  userName: ({ user }) => get(user, 'Name'),
-  userEmail: ({ user }) => get(user, 'PrimaryEmail'),
-  userCustomerId: ({ user }) => get(user, 'CustomerId')
+  userName: ({ user }) => get(user, 'name'),
+  userEmail: ({ user }) => get(user, 'email'),
+  userId: ({ user }) => get(user, 'user_id')
 }
 
 const store = new Vuex.Store({

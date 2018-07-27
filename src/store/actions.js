@@ -31,17 +31,16 @@ const authentication = {
     context.commit('authorized', null)
     context.commit('profile', null)
   },
-  authorized ({ commit, dispatch }, authorized) {
+  authorized ({ commit }, authorized) {
     commit('authorized', authorized)
   },
-  loadProfile ({ getters, commit }) {
+  async loadProfile ({ getters, commit }) {
     const { accessToken } = getters
     if (accessToken) {
-      amazon.Login.retrieveProfile(accessToken, ({ profile }) => {
-        if (profile) {
-          commit('profile', profile)
-        }
-      })
+      const url = `https://api.amazon.com/user/profile?access_token=${accessToken}`
+      const response = await fetch(url)
+      const profile = await response.json()
+      commit('profile', profile)
     }
   }
 }
