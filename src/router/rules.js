@@ -14,7 +14,7 @@ const apply = ({ router, store }) => {
   router.beforeEach((to, from, next) => {
     if (isAuthRedirect(to)) {
       const authorized = buildAuthorizedObjectFromPath(to.path)
-      store.commit('authorized', authorized)
+      store.dispatch('authorized', authorized)
       next('/')
     } else {
       next()

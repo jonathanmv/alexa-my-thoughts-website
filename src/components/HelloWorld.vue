@@ -11,19 +11,10 @@
             </small>
           </footer>
         </blockquote>
-        <LoginWithAmazon />
       </v-layout>
     </v-slide-y-transition>
   </v-container>
 </template>
-
-<script>
-import LoginWithAmazon from '@/components/LoginWithAmazon'
-
-export default {
-  components: { LoginWithAmazon }
-}
-</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
