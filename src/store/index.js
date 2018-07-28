@@ -12,6 +12,9 @@ const mutations = {
   },
   profile (state, profile) {
     state.user = profile
+  },
+  moodListLoaded (state, moodList) {
+    state.moodList = moodList
   }
 }
 
@@ -27,7 +30,8 @@ const getters = {
 const store = new Vuex.Store({
   state: {
     authorized: null,
-    user: null
+    user: null,
+    moodList: []
   },
   getters,
   mutations,

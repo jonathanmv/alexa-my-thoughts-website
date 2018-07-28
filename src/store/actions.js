@@ -2,7 +2,8 @@
 
 const {
   LOGIN_WITH_AMAZON_CLIENT_ID,
-  LOGIN_WITH_AMAZON_REDIRECT_URL
+  LOGIN_WITH_AMAZON_REDIRECT_URL,
+  BACKEND_URL
 } = process.env
 
 const authentication = {
@@ -34,17 +35,36 @@ const authentication = {
   authorized ({ commit }, authorized) {
     commit('authorized', authorized)
   },
-  async loadProfile ({ getters, commit }) {
+  async loadProfile ({ getters, commit, dispatch }) {
     const { accessToken } = getters
     if (accessToken) {
       const url = `https://api.amazon.com/user/profile?access_token=${accessToken}`
       const response = await fetch(url)
       const profile = await response.json()
       commit('profile', profile)
+      dispatch('listMood')
     }
   }
 }
 
+const backend = {
+  async listMood ({ getters, commit }) {
+    const { accessToken } = getters
+    if (!accessToken) {
+      return Promise.reject(new Error('No accessToken found'))
+    }
+
+    const url = BACKEND_URL + '/feeling'
+    const headers = {
+      Authorization: accessToken
+    }
+    const response = await fetch(url, { headers })
+    const data = await response.json()
+    commit('moodListLoaded', data)
+  }
+}
+
 export default {
-  ...authentication
+  ...authentication,
+  ...backend
 }
