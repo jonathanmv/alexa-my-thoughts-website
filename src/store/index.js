@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import get from 'lodash/get'
 
 import actions from './actions'
+import chartDataHelper from './chartDataHelper'
 
 Vue.use(Vuex)
 
@@ -24,7 +25,8 @@ const getters = {
   user: ({ user }) => user,
   userName: ({ user }) => get(user, 'name'),
   userEmail: ({ user }) => get(user, 'email'),
-  userId: ({ user }) => get(user, 'user_id')
+  userId: ({ user }) => get(user, 'user_id'),
+  moodScatteredOverWeek: ({ moodList }) => chartDataHelper.scatterFeelingsOverWeek(moodList)
 }
 
 const store = new Vuex.Store({

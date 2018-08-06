@@ -1,0 +1,123 @@
+{
+  "authorized": {
+    "accessToken": "Atza|IwEBIDqgV5Yow9DXRCTnYs4H8mWYItLqUB6MsgKNjiesRbp7L3mDD40mIHEG8Fdhzknj7rzIDrS4d4Wi6-b7BTCXVIr23NvfVLWLfhlaccBWHbozRP_Uwl7ChA-eIRdJVriLe9GAm9V6K-khqKvLgqm-LP5m95lr7ENxe85HgHsnfa7R3jP5KmLkgSDrcFqjIC9C51h7hGM6t9jK0RbjVDefg3sRUz4wbEmXKp5U0qen-dkFdlngck9zgcVxG79xrrpokOu5eiIyDvV8x5yjx0pdji7EfZ955Qb_bJuApkGWQwL-kV8jfTGQGrtLX5m6anJds4upXbWAqY2BFVFtKlCbC4UCKVNJT4w7_SRoK4tfFe4g8LgFVnY6gDEvCinVOEeku_6CWNZU6DveuueQnLrej2u80AxA2EtIkJ38z5RxdQFDGQlYIQvwncGMgtVafxtoO_y2qICwYNmj1B9j2u9cC4IbQgoqaAHLzIVxjBymuRycoT_lfSzRGScJ1_lvYsZ2TYAMf3HZQ9BDgYqUxEyk_8lirUac_KNKU_z7abe-N5JyiA",
+    "tokenType": "bearer",
+    "expiresIn": "3600",
+    "scope": "profile"
+  },
+  "user": {
+    "user_id": "amzn1.account.AGJEO4PCZGVV6OAHZ7GDYNHYKZUQ",
+    "name": "jonathan",
+    "email": "jonathanmv@outlook.com"
+  },
+  "moodList": [
+    {
+      "createdAt": "2018-07-27T09:59:11.545Z",
+      "feeling": "great",
+      "sentiment": "positive",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T09:59:54.018Z",
+      "feeling": "fantastic",
+      "sentiment": "positive",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T14:33:35.743Z",
+      "feeling": "tired",
+      "sentiment": "negative",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T15:30:50.623Z",
+      "feeling": "good",
+      "sentiment": "positive",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T16:17:40.403Z",
+      "feeling": "great",
+      "sentiment": "positive",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T16:18:11.368Z",
+      "feeling": "great",
+      "sentiment": "positive",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T19:34:05.345Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T19:35:30.520Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T19:35:52.280Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T19:35:55.287Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T19:37:03.980Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T19:37:14.419Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T19:37:42.820Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T19:37:50.659Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T20:53:28.216Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-27T20:54:19.896Z",
+      "feeling": "test",
+      "sentiment": "neutral",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-28T15:07:52.418Z",
+      "feeling": "wonderful",
+      "sentiment": "positive",
+      "userId": "jonathanmv@outlook.com"
+    },
+    {
+      "createdAt": "2018-07-28T15:59:24.708Z",
+      "feeling": "wonderful",
+      "sentiment": "positive",
+      "userId": "jonathanmv@outlook.com"
+    }
+  ]
+}

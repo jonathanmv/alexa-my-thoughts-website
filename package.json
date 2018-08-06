@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "unit-coverage": "jest --config test/unit/jest.conf.js --coverage",
+    "test-coverage": "npm run unit-coverage",
+    "unit": "jest --config test/unit/jest.conf.js",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "build": "node build/build.js",
@@ -19,8 +21,11 @@
     "url": "https://github.com/jonathanmv/alexa-my-thoughts-website.git"
   },
   "dependencies": {
+    "chart.js": "2.7.2",
     "lodash": "4.17.10",
+    "moment": "2.22.2",
     "vue": "^2.5.2",
+    "vue-echarts": "3.0.9",
     "vue-router": "^3.0.1",
     "vuetify": "^1.0.0",
     "vuex": "3.0.1"

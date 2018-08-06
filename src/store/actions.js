@@ -23,7 +23,7 @@ const authentication = {
       c.appendChild(a)
     })(document)
   },
-  login () {
+  login ({ dispatch }) {
     const options = { scope: 'profile', popup: false }
     amazon.Login.authorize(options, LOGIN_WITH_AMAZON_REDIRECT_URL)
   },
