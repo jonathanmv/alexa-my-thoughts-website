@@ -14,7 +14,7 @@ const mutations = {
   profile (state, profile) {
     state.user = profile
   },
-  moodListLoaded (state, moodList) {
+  moodList (state, moodList) {
     state.moodList = moodList
   }
 }
@@ -26,7 +26,8 @@ const getters = {
   userName: ({ user }) => get(user, 'name'),
   userEmail: ({ user }) => get(user, 'email'),
   userId: ({ user }) => get(user, 'user_id'),
-  moodScatteredOverWeek: ({ moodList }) => chartDataHelper.scatterFeelingsOverWeek(moodList)
+  moodScatteredOverWeek: ({ moodList }) => chartDataHelper.scatterFeelingsOverWeek(moodList),
+  moodList: ({ moodList }) => moodList
 }
 
 const store = new Vuex.Store({

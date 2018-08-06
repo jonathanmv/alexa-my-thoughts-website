@@ -1,15 +1,4 @@
 {
-  "authorized": {
-    "accessToken": "Atza|IwEBIDqgV5Yow9DXRCTnYs4H8mWYItLqUB6MsgKNjiesRbp7L3mDD40mIHEG8Fdhzknj7rzIDrS4d4Wi6-b7BTCXVIr23NvfVLWLfhlaccBWHbozRP_Uwl7ChA-eIRdJVriLe9GAm9V6K-khqKvLgqm-LP5m95lr7ENxe85HgHsnfa7R3jP5KmLkgSDrcFqjIC9C51h7hGM6t9jK0RbjVDefg3sRUz4wbEmXKp5U0qen-dkFdlngck9zgcVxG79xrrpokOu5eiIyDvV8x5yjx0pdji7EfZ955Qb_bJuApkGWQwL-kV8jfTGQGrtLX5m6anJds4upXbWAqY2BFVFtKlCbC4UCKVNJT4w7_SRoK4tfFe4g8LgFVnY6gDEvCinVOEeku_6CWNZU6DveuueQnLrej2u80AxA2EtIkJ38z5RxdQFDGQlYIQvwncGMgtVafxtoO_y2qICwYNmj1B9j2u9cC4IbQgoqaAHLzIVxjBymuRycoT_lfSzRGScJ1_lvYsZ2TYAMf3HZQ9BDgYqUxEyk_8lirUac_KNKU_z7abe-N5JyiA",
-    "tokenType": "bearer",
-    "expiresIn": "3600",
-    "scope": "profile"
-  },
-  "user": {
-    "user_id": "amzn1.account.AGJEO4PCZGVV6OAHZ7GDYNHYKZUQ",
-    "name": "jonathan",
-    "email": "jonathanmv@outlook.com"
-  },
   "moodList": [
     {
       "createdAt": "2018-07-27T09:59:11.545Z",

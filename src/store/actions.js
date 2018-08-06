@@ -1,13 +1,26 @@
 /* global amazon */
+import axios from 'axios'
 
 const {
   LOGIN_WITH_AMAZON_CLIENT_ID,
   LOGIN_WITH_AMAZON_REDIRECT_URL,
-  BACKEND_URL
+  BACKEND_URL,
+  NODE_ENV
 } = process.env
+
+const isDev = NODE_ENV === 'development'
+
+if (isDev) {
+  import('@/store/mockedBackend')
+    .then(mocked => mocked.default(axios))
+}
 
 const authentication = {
   setUpLoginWithAmazon ({ dispatch }) {
+    if (isDev) {
+      return
+    }
+
     window.onAmazonLoginReady = () => {
       amazon.Login.setClientId(LOGIN_WITH_AMAZON_CLIENT_ID)
       dispatch('loadProfile')
@@ -23,14 +36,27 @@ const authentication = {
       c.appendChild(a)
     })(document)
   },
-  login ({ dispatch }) {
+  async login ({ dispatch }) {
+    if (isDev) {
+      const { data: authorized } = await axios.get('/authorize')
+      dispatch('authorized', authorized)
+      dispatch('loadProfile')
+      return
+    }
+
     const options = { scope: 'profile', popup: false }
     amazon.Login.authorize(options, LOGIN_WITH_AMAZON_REDIRECT_URL)
   },
-  logout (context) {
-    amazon.Login.logout()
-    context.commit('authorized', null)
-    context.commit('profile', null)
+  logout ({ dispatch }) {
+    if (!isDev) {
+      amazon.Login.logout()
+    }
+    dispatch('cleanUserData')
+  },
+  cleanUserData ({ commit }) {
+    commit('authorized', null)
+    commit('profile', null)
+    commit('moodList', [])
   },
   authorized ({ commit }, authorized) {
     commit('authorized', authorized)
@@ -38,11 +64,17 @@ const authentication = {
   async loadProfile ({ getters, commit, dispatch }) {
     const { accessToken } = getters
     if (accessToken) {
-      const url = `https://api.amazon.com/user/profile?access_token=${accessToken}`
-      const response = await fetch(url)
-      const profile = await response.json()
-      commit('profile', profile)
-      dispatch('listMood')
+      try {
+        const url = `https://api.amazon.com/user/profile?access_token=${accessToken}`
+        const { data: profile } = await axios(url)
+        commit('profile', profile)
+        dispatch('listMood')
+      } catch (error) {
+        console.log(`Error getting user profile: ${error.message}`)
+        console.log(error)
+      }
+    } else {
+      console.log(`No accessToken found. Can't load profile`)
     }
   }
 }
@@ -58,9 +90,8 @@ const backend = {
     const headers = {
       Authorization: accessToken
     }
-    const response = await fetch(url, { headers })
-    const data = await response.json()
-    commit('moodListLoaded', data)
+    const { data } = await axios(url, { headers })
+    commit('moodList', data)
   }
 }
 
