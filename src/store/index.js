@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import get from 'lodash/get'
+import filter from 'lodash/filter'
 
 import actions from './actions'
 import chartDataHelper from './chartDataHelper'
@@ -27,7 +28,10 @@ const getters = {
   userEmail: ({ user }) => get(user, 'email'),
   userId: ({ user }) => get(user, 'user_id'),
   moodScatteredOverWeek: ({ moodList }) => chartDataHelper.scatterFeelingsOverWeek(moodList),
-  moodList: ({ moodList }) => moodList
+  moodList: ({ moodList = [] }) => chartDataHelper.extendWithHourAndDay(moodList),
+  positiveMoods: (store, { moodList = [] }) => filter(moodList, { sentiment: 'positive' }),
+  negativeMoods: (store, { moodList = [] }) => filter(moodList, { sentiment: 'negative' }),
+  neutralMoods: (store, { moodList = [] }) => filter(moodList, { sentiment: 'neutral' })
 }
 
 const store = new Vuex.Store({

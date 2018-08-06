@@ -2,7 +2,24 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <Heatmap />
+        <v-card class="mb-3">
+          <v-container fill-height fluid>
+            <v-layout fill-height>
+              <v-flex xs12 align-end flexbox>
+                <Heatmap />
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-card>
+        <v-card class="mb-3">
+          <v-container fill-height fluid>
+            <v-layout fill-height>
+              <v-flex xs12 align-end flexbox>
+                <Timeline />
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-card>
       </v-layout>
     </v-slide-y-transition>
   </v-container>
@@ -10,9 +27,10 @@
 
 <script>
 import Heatmap from '@/components/charts/Heatmap'
+import Timeline from '@/components/charts/Timeline'
 
 export default {
-  components: { Heatmap }
+  components: { Heatmap, Timeline }
 }
 </script>
 

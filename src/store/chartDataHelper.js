@@ -15,6 +15,13 @@ class BaseChartHelper {
     return [hour, day]
   }
 
+  extendWithHourAndDay (feelings = []) {
+    return feelings.map(feeling => {
+      const [hour, day] = this.hourDayOfWeekPair(feeling.createdAt)
+      return { ...feeling, hour, day }
+    })
+  }
+
   scatterFeelingsOverWeek (feelings) {
     throw new Error('Not implemented. This should have been overriden by a subclass.')
   }

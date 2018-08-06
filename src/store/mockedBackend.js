@@ -1,3 +1,4 @@
+// https://github.com/ctimmerm/axios-mock-adapter
 import MockAdapter from 'axios-mock-adapter'
 
 const {

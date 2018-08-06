@@ -19,7 +19,7 @@ const getSeries = data => ({
   animationDelay: idx => idx * 2
 })
 
-const hours = ['12a', '1a', '2a', '3a', '4a', '5a', '6a', '7a', '8a', '9a', '10a', '11a', '12p', '1p', '2p', '3p', '4p', '5p', '6p', '7p', '8p', '9p', '10p', '11p']
+const hours = ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
 const days = ['Saturday', 'Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday', 'Sunday']
 const baseOptions = {
   title: {
@@ -32,9 +32,9 @@ const baseOptions = {
   },
   tooltip: {
     position: 'top',
-    formatter: function ({ value }) {
+    formatter: ({ value }) => {
       const [hour, day, amount] = value
-      return `${amount} report${amount === 1 ? '' : 's'} on ${days[day]}s at ${hours[hour]}m`
+      return `${amount} report${amount === 1 ? '' : 's'} on ${days[day]}s at ${hours[hour]}`
     }
   },
   grid: {
