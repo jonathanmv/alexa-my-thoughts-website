@@ -73,8 +73,6 @@ const authentication = {
         console.log(`Error getting user profile: ${error.message}`)
         console.log(error)
       }
-    } else {
-      console.log(`No accessToken found. Can't load profile`)
     }
   }
 }

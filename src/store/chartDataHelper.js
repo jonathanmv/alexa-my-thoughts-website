@@ -29,16 +29,19 @@ class BaseChartHelper {
 
 class EChartsChartHelper extends BaseChartHelper {
   scatterFeelingsOverWeek (feelings) {
+    // console.log(`scattering ${feelings.length} feelings`)
     const dates = feelings.map(({ createdAt }) => createdAt)
     // [hour, day]
     const pairs = dates.map(this.hourDayOfWeekPair)
+    // console.log(`scattering ${pairs.length} pairs`)
     // { 1,2: 5, 0,6: 3 }
-    const countsObject = _.countBy(pairs, pair => pair.join('-'))
+    const countsObject = _.countBy(pairs, pair => pair.join())
     // ['1,2', '0,6']
     const uniquePairs = Object.keys(countsObject)
     // [1, 2, 5]
     const data = uniquePairs.map(pair => {
-      const [hour, day] = pair.split('-').map(Number)
+      // console.log('split', pair, pair.split(',').map(Number))
+      const [hour, day] = pair.split(',').map(Number)
       const amount = countsObject[pair]
       return [hour, day, amount]
     })

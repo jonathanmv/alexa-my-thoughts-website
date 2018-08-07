@@ -1,12 +1,6 @@
 import helper from '@/store/chartDataHelper'
 import listMoodResponse from '../data/listMoodResponse.json'
 
-// const {
-//   groupBySentiment,
-//   hourDayOfWeekPair,
-//   scatterFeelingsOverWeek
-// } = helper
-
 const { moodList } = listMoodResponse
 
 describe('store chartDataHelper', () => {
@@ -26,7 +20,7 @@ describe('store chartDataHelper', () => {
     expect(actual).toEqual(expected)
   })
 
-  it('should get datasets with x and y datapoints', () => {
+  it('should get triplets of hour, day, amount', () => {
     const feelings = [
       { createdAt: '2018-07-27T09:35:11.545Z', sentiment: 'positive' },
       { createdAt: '2018-07-27T09:59:11.545Z', sentiment: 'positive' },

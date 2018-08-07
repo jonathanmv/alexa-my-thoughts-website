@@ -36,8 +36,9 @@ const baseOptions = {
     position: 'top',
     formatter: ({ value }) => {
       const rest = value[2]
+      const date = moment(value[0]).format('ddd, hA')
       const { sentiment, feeling } = rest
-      return `${sentiment} because you were feeling ${feeling}`
+      return `${sentiment}. You were ${feeling} on ${date}`
     }
   },
   xAxis: {

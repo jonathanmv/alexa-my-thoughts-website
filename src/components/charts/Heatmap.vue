@@ -26,13 +26,13 @@ const getSeries = data => ({
 })
 
 const hours = ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
-const days = ['Sat', 'Fri', 'Thu', 'Wed', 'Tue', 'Mon', 'Sun']
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const baseOptions = {
   tooltip: {
     position: 'top',
     formatter: ({ value }) => {
       const [hour, day, amount] = value
-      return `${amount} report${amount === 1 ? '' : 's'} on ${days[day]}s at ${hours[hour]}`
+      return `${amount} report${amount === 1 ? '' : 's'} on ${days[day]}, ${hours[hour]}`
     }
   },
   grid: {
@@ -43,12 +43,30 @@ const baseOptions = {
   xAxis: {
     type: 'category',
     data: hours,
-    splitArea: { show: true }
+    splitArea: { show: false },
+    axisLine: { show: false },
+    axisTick: {
+      alignWithLabel: true
+    },
+    splitLine: {
+      show: true,
+      lineStyle: {
+        type: 'dotted'
+      }
+    }
   },
   yAxis: {
     type: 'category',
     data: days,
-    splitArea: { show: true }
+    splitArea: { show: false },
+    axisLine: { show: false },
+    axisTick: { show: false },
+    splitLine: {
+      show: true,
+      lineStyle: {
+        type: 'dotted'
+      }
+    }
   },
   visualMap: {
     min: 0,
