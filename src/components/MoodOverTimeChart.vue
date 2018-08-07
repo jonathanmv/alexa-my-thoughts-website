@@ -20,6 +20,15 @@
             </v-layout>
           </v-container>
         </v-card>
+        <v-card class="mb-3">
+          <v-container fill-height fluid>
+            <v-layout fill-height>
+              <v-flex xs12 align-end flexbox>
+                <GeneralMood />
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-card>
       </v-layout>
     </v-slide-y-transition>
   </v-container>
@@ -28,9 +37,10 @@
 <script>
 import Heatmap from '@/components/charts/Heatmap'
 import Timeline from '@/components/charts/Timeline'
+import GeneralMood from '@/components/charts/GeneralMood'
 
 export default {
-  components: { Heatmap, Timeline }
+  components: { Heatmap, Timeline, GeneralMood }
 }
 </script>
 
