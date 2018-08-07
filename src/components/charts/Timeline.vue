@@ -23,25 +23,15 @@ const getSeries = (name, data) => ({
 })
 
 const baseOptions = {
-  title: {
-    text: 'Mood over time'
+  grid: {
+    top: '10%',
+    right: 25,
+    bottom: '25%'
   },
   legend: {
     data: ['Positive', 'Neutral', 'Negative'],
-    left: 'right'
+    bottom: '5%'
   },
-  // toolbox: {
-  //   show: true,
-  //   feature: {
-  //     dataZoom: {
-  //       yAxisIndex: 'none'
-  //     },
-  //     dataView: { readOnly: false },
-  //     magicType: { type: ['line', 'bar'] },
-  //     restore: {},
-  //     saveAsImage: {}
-  //   }
-  // },
   tooltip: {
     position: 'top',
     formatter: ({ value }) => {
@@ -50,26 +40,30 @@ const baseOptions = {
       return `${sentiment} because you were feeling ${feeling}`
     }
   },
-  // grid: {
-  //   left: 2,
-  //   bottom: 10,
-  //   right: 10,
-  //   containLabel: true
-  // },
   xAxis: {
     type: 'time',
     splitLine: {
-      show: false
+      lineStyle: {
+        type: 'dotted'
+      }
     },
     axisLabel: {
       formatter: val => moment(val).format('ddd, MMM Do')
-    }
+    },
+    axisLine: { show: false }
   },
   yAxis: {
     type: 'category',
     data: hours,
     splitLine: {
-      show: false
+      show: true,
+      lineStyle: {
+        type: 'dotted'
+      }
+    },
+    axisLine: { show: false },
+    axisLabel: {
+      interval: 4
     }
   },
   series: []

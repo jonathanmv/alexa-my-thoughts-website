@@ -23,21 +23,11 @@ const getSeries = data => ({
       shadowColor: 'rgba(0, 0, 0, 0.5)'
     }
   }
-  // symbolSize: val => val[2] * 5,
-  // animationDelay: idx => idx * 2
 })
 
 const hours = ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
-const days = ['Saturday', 'Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday', 'Sunday']
+const days = ['Sat', 'Fri', 'Thu', 'Wed', 'Tue', 'Mon', 'Sun']
 const baseOptions = {
-  title: {
-    text: 'How often you report your mood',
-    link: 'https://github.com/pissang/echarts-next/graphs/punch-card'
-  },
-  legend: {
-    data: ['Reports'],
-    left: 'right'
-  },
   tooltip: {
     position: 'top',
     formatter: ({ value }) => {
@@ -46,8 +36,9 @@ const baseOptions = {
     }
   },
   grid: {
-    width: '85%',
-    height: '65%'
+    top: '10%',
+    right: 25,
+    bottom: '25%'
   },
   xAxis: {
     type: 'category',
@@ -64,7 +55,8 @@ const baseOptions = {
     max: 10,
     calculable: true,
     orient: 'horizontal',
-    left: 'center'
+    left: 'center',
+    bottom: '5%'
   },
   series: [getSeries()]
 }

@@ -10,10 +10,8 @@ import 'echarts/lib/chart/pie'
 
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
-import 'echarts/lib/component/title'
 
 const getInternalSeries = data => ({
-  name: 'General Mood',
   type: 'pie',
   radius: ['30%', '45%'],
   data,
@@ -32,7 +30,6 @@ const getInternalSeries = data => ({
 })
 
 const getExternalSeries = data => ({
-  name: 'Particular Feeling',
   type: 'pie',
   radius: ['55%', '70%'],
   label: {
@@ -44,13 +41,6 @@ const getExternalSeries = data => ({
 })
 
 const baseOptions = {
-  title: {
-    text: 'General Mood'
-  },
-  // legend: {
-  //   data: ['Positive', 'Neutral', 'Negative'],
-  //   left: 'right'
-  // },
   tooltip: {
     position: 'top',
     formatter: '{b} mood<br/>Reported {c} times<br />{d}%'
