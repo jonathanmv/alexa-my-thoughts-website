@@ -5,18 +5,26 @@
 <script>
 import { mapGetters } from 'vuex'
 import ECharts from 'vue-echarts/components/ECharts'
-import 'echarts/lib/chart/scatter'
+import 'echarts/lib/chart/heatmap'
 
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/title'
+import 'echarts/lib/component/visualMap'
 
 const getSeries = data => ({
   name: 'Reports',
-  type: 'scatter',
+  type: 'heatmap',
   data,
-  symbolSize: val => val[2] * 5,
-  animationDelay: idx => idx * 2
+  label: { normal: { show: true } },
+  itemStyle: {
+    emphasis: {
+      shadowBlur: 10,
+      shadowColor: 'rgba(0, 0, 0, 0.5)'
+    }
+  }
+  // symbolSize: val => val[2] * 5,
+  // animationDelay: idx => idx * 2
 })
 
 const hours = ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
@@ -38,32 +46,25 @@ const baseOptions = {
     }
   },
   grid: {
-    left: 2,
-    bottom: 10,
-    right: 10,
-    containLabel: true
+    width: '85%',
+    height: '65%'
   },
   xAxis: {
     type: 'category',
     data: hours,
-    boundaryGap: false,
-    splitLine: {
-      show: true,
-      lineStyle: {
-        color: '#bbb',
-        type: 'dashed'
-      }
-    },
-    axisLine: {
-      show: false
-    }
+    splitArea: { show: true }
   },
   yAxis: {
     type: 'category',
     data: days,
-    axisLine: {
-      show: false
-    }
+    splitArea: { show: true }
+  },
+  visualMap: {
+    min: 0,
+    max: 10,
+    calculable: true,
+    orient: 'horizontal',
+    left: 'center'
   },
   series: [getSeries()]
 }
