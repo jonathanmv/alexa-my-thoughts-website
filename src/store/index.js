@@ -6,6 +6,8 @@ import filter from 'lodash/filter'
 import actions from './actions'
 import chartDataHelper from './chartDataHelper'
 
+import usersModule from '@/modules/users/store'
+
 Vue.use(Vuex)
 
 const mutations = {
@@ -35,6 +37,9 @@ const getters = {
 }
 
 const store = new Vuex.Store({
+  modules: {
+    users: usersModule
+  },
   state: {
     authorized: null,
     user: null,

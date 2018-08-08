@@ -1,5 +1,6 @@
 /* global amazon */
 import axios from 'axios'
+import router from '@/router'
 
 const {
   LOGIN_WITH_AMAZON_CLIENT_ID,
@@ -93,7 +94,15 @@ const backend = {
   }
 }
 
+const redirect = {
+  redirect (context, path) {
+    console.log(`Redirecting to ${path}`)
+    router.push({ path })
+  }
+}
+
 export default {
   ...authentication,
-  ...backend
+  ...backend,
+  ...redirect
 }
