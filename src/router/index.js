@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import MoodOverTimeChart from '@/components/MoodOverTimeChart'
+import TermsOfUse from '@/components/TermsOfUse'
 
 import userRoutes from '@/modules/users/routes'
 
@@ -12,6 +13,11 @@ const router = new Router({
       path: '/',
       name: 'MoodOverTimeChart',
       component: MoodOverTimeChart
+    },
+    {
+      path: '/terms-of-use',
+      name: 'TermsOfUse',
+      component: TermsOfUse
     },
     ...userRoutes
   ]

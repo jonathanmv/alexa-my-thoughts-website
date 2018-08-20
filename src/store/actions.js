@@ -9,7 +9,7 @@ const {
   NODE_ENV
 } = process.env
 
-const isDev = NODE_ENV === 'development'
+const isDev = true // NODE_ENV === 'development'
 
 if (isDev) {
   import('@/store/mockedBackend')
